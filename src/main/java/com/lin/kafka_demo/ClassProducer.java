@@ -3,13 +3,12 @@ package com.lin.kafka_demo;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-
 import java.util.Properties;
 
 /**
  * 自定义序列化器
  */
-public class UserProducer {
+public class ClassProducer {
     private static final String brokerList = "192.168.18.128:9092";
     private static final String topic = "lin";
     public static void main(String[] args) {
@@ -23,13 +22,13 @@ public class UserProducer {
         // 设置值的序列化
         //properties.put("value.serializer",
         //        "org.apache.kafka.common.serialization.StringSerializer");
-        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, UserSerializer.class.getName());
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ClassSerializer.class.getName());
         //设置集群地址
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokerList);
         KafkaProducer<String,User> kafkaProducer = new KafkaProducer<String, User>(properties);
         User user = new User();
         user.setId(1);
-        user.setName("卓卓");
+        user.setName("娅娅");
         user.setSex("女");
         ProducerRecord<String,User> producerRecord = new ProducerRecord<>(topic, "kafka_demo", user);
         try {

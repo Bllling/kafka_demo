@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-public class UserConsumer {
+public class ClassConsumer {
     private static final String brokerList = "192.168.18.128:9092";
     private static final String topic = "lin";
     private static final String groupId = "group.demo";
@@ -23,7 +23,7 @@ public class UserConsumer {
         // 设置值序列化
         //properties.put("value.deserializer",
         //        "org.apache.kafka.common.serialization.StringDeserializer");
-        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, UserDeserializer.class.getName());
+        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ClassDeserializer.class.getName());
 
         // 设置消费组
         //properties.put("group.id", groupId);
