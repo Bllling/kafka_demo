@@ -34,9 +34,7 @@ public class UserConsumer {
         kafkaConsumer.subscribe(Collections.singletonList(topic));
         while (true){
             ConsumerRecords<String,User> records = kafkaConsumer.poll(Duration.ofMillis(1000));
-            if (records == null){
-                continue;
-            }
+
             for (ConsumerRecord<String,User> record:records){
                 System.out.println(record.value());
             }
