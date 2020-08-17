@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 
 /**
- * 自定义反序列化器
+ *  自定义类反序列化器，此类有BUG，先不使用
  */
 public class ClassDeserializer<T> implements Deserializer<T> {
     @Override
@@ -20,7 +20,7 @@ public class ClassDeserializer<T> implements Deserializer<T> {
         ObjectMapper mapper = new ObjectMapper();
         T t = null;
         try {
-            t = mapper.readValue(data,  (Class < T > ) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[ 0 ]);
+            t = mapper.readValue(data,  (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }

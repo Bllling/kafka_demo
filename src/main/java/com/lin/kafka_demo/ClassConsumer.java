@@ -10,6 +10,9 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
+/**
+ * 自定义类反序列化器的消费者，此类有BUG，先不使用
+ */
 public class ClassConsumer {
     private static final String brokerList = "192.168.18.128:9092";
     private static final String topic = "lin";

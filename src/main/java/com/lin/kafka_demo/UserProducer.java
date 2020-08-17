@@ -7,7 +7,7 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import java.util.Properties;
 
 /**
- * 自定义序列化器
+ * 自定义序列化器,并发送使用了拦截器
  */
 public class UserProducer {
     private static final String brokerList = "192.168.18.128:9092";
@@ -26,6 +26,8 @@ public class UserProducer {
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, UserSerializer.class.getName());
         //设置集群地址
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, brokerList);
+        //设置拦截器
+        properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG,ProducerInterceptorPrefix.class.getName());
         KafkaProducer<String,User> kafkaProducer = new KafkaProducer<String, User>(properties);
         User user = new User();
         user.setId(1);
