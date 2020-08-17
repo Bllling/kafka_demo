@@ -1,4 +1,4 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

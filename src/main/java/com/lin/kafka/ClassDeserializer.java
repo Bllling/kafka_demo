@@ -1,31 +1,30 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Deserializer;
 
-import java.nio.ByteBuffer;
+import java.lang.reflect.ParameterizedType;
 import java.util.Map;
 
 /**
- * 自定义反序列化器
+ *  自定义类反序列化器，此类有BUG，先不使用
  */
-public class UserDeserializer implements Deserializer<User> {
+public class ClassDeserializer<T> implements Deserializer<T> {
     @Override
     public void configure(Map<String, ?> map, boolean b) {
 
     }
 
     @Override
-    public User deserialize(String s, byte[] data) {
+    public T deserialize(String s, byte[] data) {
         ObjectMapper mapper = new ObjectMapper();
-        User user = null;
+        T t = null;
         try {
-            user = mapper.readValue(data, User.class);
+            t = mapper.readValue(data,  (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return user;
+        return t;
     }
 
     @Override

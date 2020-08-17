@@ -1,11 +1,10 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
 import java.util.Map;
 
 public class UserSerializer implements Serializer<User> {

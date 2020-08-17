@@ -1,4 +1,4 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import lombok.Data;
 

@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: 192.168.18.128:9092
+      transaction-id-prefix: kafka_tx.
+    consumer:
+      bootstrap-servers: 192.168.18.128:9092

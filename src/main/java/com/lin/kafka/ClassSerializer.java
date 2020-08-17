@@ -1,4 +1,4 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

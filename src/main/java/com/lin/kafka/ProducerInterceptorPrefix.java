@@ -1,4 +1,4 @@
-package com.lin.kafka_demo;
+package com.lin.kafka;
 
 import org.apache.kafka.clients.producer.ProducerInterceptor;
 import org.apache.kafka.clients.producer.ProducerRecord;

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    姓名:<input id="name" type="text">
+    性别:<input id="sex" type="text">
+    <input type="button" onclick="send()" value="发送">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        function send() {
+            var name = $("#name").val();
+            var sex = $("#sex").val();
+            $.post("send3",{name:name,sex:sex},function(data){alert(data)},"json")
+        }
+    </script>
+</body>
+</html>
