@@ -26,7 +26,7 @@ public class KafkaController {
      */
     @GetMapping("/send/{input}")
     public String sendToKafka(@PathVariable String input){
-        //第一次发送，没有事务控制,和31行的事务控制不能同时存在
+        //第一次发送，没有事务控制,因为配置文件中定义了事务控制，这行没有事务控制，所以程序运行会报错
         //this.template.send(topic,input);
 
         // 事务的支持,根据事务的一致性,如果发送的是error，那33行发送的数据会回滚
