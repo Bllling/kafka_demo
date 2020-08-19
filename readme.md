@@ -1,3 +1,4 @@
+# SpringBoot整合kafka   com.lin.springboot
 # 传统的生产者与消费者 com.lin.kafka包下
 ## ClassConsumer	自定义类反序列化器的消费者，此类有BUG，先不使用
 ## ClassDeserializer	自定义类反序列化器，此类有BUG，先不使用
@@ -14,4 +15,4 @@
 ## StringSerializer String类的序列化器
 
  
-# SpringBoot整合kafka   com.lin.springboot
+
